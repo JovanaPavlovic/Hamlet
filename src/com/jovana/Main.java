@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String url = "https://gist.githubusercontent.com/provpup/2fc41686eab7400b796b/raw/b575bd01a58494dfddc1d6429ef0167e709abf9b/hamlet.txt";
+        String url = getHamletUrl();
         String body = Text.fetchText(url);
 
         String[]  words = Words.replaceAndSplit(body);
@@ -19,4 +19,9 @@ public class Main {
         HashMap<Character, Integer> countLetters = letter.mapLetters(chars);
         System.out.println(countLetters);
     }
+
+    private static String getHamletUrl() {
+        return "https://gist.githubusercontent.com/provpup/2fc41686eab7400b796b/raw/b575bd01a58494dfddc1d6429ef0167e709abf9b/hamlet.txt";
+    }
+
 }
